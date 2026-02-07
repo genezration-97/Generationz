@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جيل زد - GenerationZ  </title>
+    <meta name="description" content="منصة شبابية تنموية تهدف إلى تمكين جيل زد وبناء مستقبل أفضل">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "secondary": "#10B981",
+                        "accent": "#8B5CF6",
+                        "light": "#F3F4F6",
+                        "dark": "#1F2937",
+                        "genz-blue": "#2563EB",
+                        "genz-green": "#059669",
+                        "genz-purple": "#7C3AED",
+                        "genz-orange": "#F59E0B",
+                        "genz-pink": "#EC4899"
+                    },
+                    fontFamily: {
+                        "arabic": ["IBM Plex Sans Arabic", "sans-serif"],
+                        "almarai": ["Almarai", "sans-serif"],
+                        "tajawal": ["Tajawal", "sans-serif"]
+                    },
+                    animation: {
+                        "float": "float 6s ease-in-out infinite",
+                        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                        "slide-up": "slideUp 0.5s ease-out",
+                        "fade-in": "fadeIn 0.8s ease-out"
+                    },
+                    keyframes: {
+                        float: {
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-20px)" }
+                        },
+                        slideUp: {
+                            "0%": { transform: "translateY(20px)", opacity: "0" },
+                            "100%": { transform: "translateY(0)", opacity: "1" }
+                        },
+                        fadeIn: {
+                            "0%": { opacity: "0" },
+                            "100%": { opacity: "1" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 25%, #10B981 50%, #F59E0B 75%, #EC4899 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to left, #3B82F6, #8B5CF6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .wave-divider {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+        
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-right: 40px;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+        }
+        
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #3B82F6;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(2) {
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            animation-delay: 4s;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #3B82F6;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3B82F6 }
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .hamburger span {
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-8px);
+        }
+        
+        .page-transition {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: linear-gradient(to right, #3B82F6, #8B5CF6);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .swiper-slide {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        
+        .swiper-slide-active {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .typewriter {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+            }
+            
+            .timeline-item::before {
+                right: 15px;
+            }
+            
+            .timeline-item::after {
+                right: 7px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-dark font-arabic">
+    <!-- Navigation -->
+    <nav class="fixed top-0 right-0 left-0 bg-white/90 backdrop-blur-lg z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Z</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-genz-blue">جيل زد</h1>
+                        <p class="text-sm text-gray-600">GenerationZ  </p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link active-nav text-gray-700 hover:text-genz-blue font-medium transition-colors duration-300" data-page="home">الرئيسية</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-genz-blue font-medium transition-colors duration-300" data-page="about">عنّا</a>
+                    <a href="#goals" class="nav-link text-gray-700 hover:text-genz-blue font-medium transition-colors duration-300" data-page="goals">الأهداف</a>
+                    <a href="#work" class="nav-link text-gray-700 hover:text-genz-blue font-medium transition-colors duration-300" data-page="work">أعمالنا</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-genz-blue font-medium transition-colors duration-300" data-page="contact">اتصل بنا</a>
+                    
+                    <button class="px-6 py-2 bg-genz-blue text-white rounded-full hover:bg-genz-purple transition-all duration-300 font-medium">
+                        انضم إلينا
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden hamburger flex flex-col justify-center items-center w-10 h-10 space-y-1.5">
+                    <span class="w-6 h-1 bg-gray-700 rounded"></span>
+                    <span class="w-6 h-1 bg-gray-700 rounded"></span>
+                    <span class="w-6 h-1 bg-gray-700 rounded"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 bottom-0 w-64 bg-white shadow-2xl z-50 md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                    <span class="text-white font-bold">Z</span>
+                </div>
+                <h2 class="text-xl font-bold text-genz-blue">جيل زد</h2>
+            </div>
+            <button id="closeMobileMenu" class="text-gray-600 hover:text-genz-blue">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#home" class="block py-3 text-gray-700 hover:text-genz-blue font-medium border-b border-gray-100" data-page="home">
+                <i class="fas fa-home ml-3"></i>الرئيسية
+            </a>
+            <a href="#about" class="block py-3 text-gray-700 hover:text-genz-blue font-medium border-b border-gray-100" data-page="about">
+                <i class="fas fa-info-circle ml-3"></i>عنّا
+            </a>
+            <a href="#goals" class="block py-3 text-gray-700 hover:text-genz-blue font-medium border-b border-gray-100" data-page="goals">
+                <i class="fas fa-bullseye ml-3"></i>الأهداف
+            </a>
+            <a href="#work" class="block py-3 text-gray-700 hover:text-genz-blue font-medium border-b border-gray-100" data-page="work">
+                <i class="fas fa-briefcase ml-3"></i>أعمالنا
+            </a>
+            <a href="#contact" class="block py-3 text-gray-700 hover:text-genz-blue font-medium border-b border-gray-100" data-page="contact">
+                <i class="fas fa-envelope ml-3"></i>اتصل بنا
+            </a>
+            
+            <button class="w-full py-3 bg-genz-blue text-white rounded-lg hover:bg-genz-purple transition-all duration-300 font-medium mt-4">
+                <i class="fas fa-user-plus ml-2"></i>انضم إلينا
+            </button>
+        </div>
+        
+        <div class="absolute bottom-6 right-6 left-6">
+            <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#" class="text-gray-600 hover:text-genz-blue">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-genz-blue">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-genz-blue">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-genz-blue">
+                    <i class="fab fa-youtube text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content Container -->
+    <div id="pageContent" class="pt-20">
+        <!-- Home Page -->
+        <section id="homePage" class="page-content min-h-screen">
+            <!-- Hero Section -->
+            <div class="relative overflow-hidden">
+                <div class="absolute inset-0 gradient-bg opacity-10"></div>
+                <div class="container mx-auto px-4 py-20 md:py-32 relative">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="animate-slide-up">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                                <span class="text-genz-blue">جيل</span>
+                                <span class="text-genz-purple">زد</span>
+                                <span class="block text-3xl md:text-5xl mt-2 text-gray-700">منتدى شبابي </span>
+                            </h2>
+                            
+                            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                                منصة شبابية رائدة تهدف إلى تمكين جيل زد وبناء مستقبل أفضل من خلال التطوير الشخصي، 
+                                المهارات الرقمية، والريادة المجتمعية. نحن نؤمن بقوة الشباب وقدرتهم على صنع التغيير.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-4">
+                                <button class="px-8 py-3 bg-white text-genz-blue border-2 border-genz-blue rounded-full hover:bg-genz-blue hover:text-white transition-all duration-300 font-medium">
+                                    شاهد الفيديو التعريفي
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="relative z-10">
+                                <img src="https://picsum.photos/600/400?random=1" alt="شباب يشاركون في ورشة عمل" class="rounded-2xl shadow-2xl">
+                            </div>
+                            
+                            <!-- Floating Elements -->
+                            <div class="absolute -top-6 -right-6 w-24 h-24 bg-genz-green/20 rounded-full floating-element"></div>
+                            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-genz-purple/20 rounded-full floating-element"></div>
+                            <div class="absolute top-1/2 -left-8 w-20 h-20 bg-genz-orange/20 rounded-full floating-element"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wave Divider -->
+                <div class="wave-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#F3F4F6"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="bg-gray-50 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">ماذا نقدم؟</h3>
+                        <p class="text-gray-600 max-w-2xl mx-auto">خدمات ومبادرات مصممة خصيصًا لجيل زد</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                            <div class="w-16 h-16 rounded-full bg-genz-blue/10 flex items-center justify-center mb-6">
+                                <i class="fas fa-graduation-cap text-2xl text-genz-blue"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">التدريب والتطوير</h4>
+                            <p class="text-gray-600">ورش عمل ودورات تدريبية في المهارات الرقمية، القيادة، والتطوير الشخصي</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                            <div class="w-16 h-16 rounded-full bg-genz-green/10 flex items-center justify-center mb-6">
+                                <i class="fas fa-handshake text-2xl text-genz-green"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">التمكين المجتمعي</h4>
+                            <p class="text-gray-600">مشاريع مجتمعية تهدف إلى حل التحديات المحلية وبناء مجتمعات أقوى</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                            <div class="w-16 h-16 rounded-full bg-genz-purple/10 flex items-center justify-center mb-6">
+                                <i class="fas fa-briefcase text-2xl text-genz-purple"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">الريادة والابتكار</h4>
+                            <p class="text-gray-600">دعم المشاريع الريادية وتبني الأفكار المبتكرة لخلق فرص عمل جديدة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">ماذا يقول أعضاؤنا؟</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">قصص نجاح وتجارب ملهمة من شباب جيل زد</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="testimonial-card rounded-2xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/60?random=2" alt=" ثابت القحطاني" class="w-12 h-12 rounded-full">
+                            <div class="mr-4">
+                                <h5 class="font-bold text-gray-800">ثابت القحطاني </h5>
+                                <p class="text-sm text-gray-600">مطورة ويب</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"من خلال ورش العمل في جيل زد، تعلمت مهارات برمجة مكنتني من بدء عملي الخاص"</p>
+                    </div>
+                    
+                    <div class="testimonial-card rounded-2xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/60?random=3" alt="احمد سالمين " class="w-12 h-12 rounded-full">
+                            <div class="mr-4">
+                                <h5 class="font-bold text-gray-800"> احمد سالمين</h5>
+                                <p class="text-sm text-gray-600">ريادي أعمال</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"المشورة والدعم الذي تلقيتهم من المنتدى ساعدوني في تطوير مشروعي الريادي"</p>
+                    </div>
+                    
+                    <div class="testimonial-card rounded-2xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/60?random=4" alt=" عبدالرحمن بايعقوب" class="w-12 h-12 rounded-full">
+                            <div class="mr-4">
+                                <h5 class="font-bold text-gray-800"> عبدالرحمن بايعقوب</h5>
+                                <p class="text-sm text-gray-600">متطوعة مجتمعية</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"شاركت في عدة مشاريع مجتمعية من خلال المنتدى وكانت تجربة غنية ومؤثرة"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="aboutPage" class="page-content min-h-screen hidden">
+            <div class="container mx-auto px-4 py-20">
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">عن <span class="text-genz-blue">جيل زد</span></h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        منصة شبابية تنموية تأسست لتمكين جيل زد وبناء مستقبل أفضل من خلال التطوير الشخصي والمهني
+                    </p>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="grid md:grid-cols-2 gap-12 mb-20">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-genz-blue/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-eye text-2xl text-genz-blue"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">رؤيتنا</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            أن يكون منتدى جيل زد منصة شبابية رائدة و ملهمة , وتصنع جيلاً واعياً ومؤثراً, قادر على قيادة التغيير الايجابي و المساهمة الفاعلة في تنمية المجتمع و بناء مستقبل افضل.
+                        </p>
+                    </div>
+        
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-genz-green/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-bullseye text-2xl text-genz-green"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">رسالتنا</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            تمكين الشباب و تنمية قدراتهم الفكرية و العلمية من خلال برامج تعليمية وتنموية , ومبادرات خيرية وتطوعية مبتكرة , تعزز روح المبادرة والمسؤولية المجتمعية , وتحول طاقات الشباب و أفكارهم إلى أثر.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <!-- Team Section -->
+                <div class="mb-20">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">فريقنا</h3>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <img src="https://picsum.photos/150?random=5" alt="أحمد العلي" class="w-32 h-32 rounded-full mx-auto mb-4">
+                            <h4 class="font-bold text-gray-800"> عبدالعزيز باوزير</h4>
+                            <p class="text-gray-600 text-sm">المؤسس والرئيس التنفيذي</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <img src="https://picsum.photos/150?random=6" alt="فاطمة القاسم" class="w-32 h-32 rounded-full mx-auto mb-4">
+                            <h4 class="font-bold text-gray-800">عبدالقادر الحامد </h4>
+                            <p class="text-gray-600 text-sm">مدير البرامج</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <img src="https://picsum.photos/150?random=7" alt="خالد السعد" class="w-32 h-32 rounded-full mx-auto mb-4">
+                            <h4 class="font-bold text-gray-800">عبدالقادر السقاف </h4>
+                            <p class="text-gray-600 text-sm">رئيس قسم التدريب</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <img src="https://picsum.photos/150?random=8" alt="لينا محمد" class="w-32 h-32 rounded-full mx-auto mb-4">
+                            <h4 class="font-bold text-gray-800"> عبدالله الحبشي</h4>
+                            <p class="text-gray-600 text-sm">منسق المشاريع المجتمعية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">قيمنا</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 rounded-full bg-genz-blue/10 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-users text-3xl text-genz-blue"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">التعاون</h4>
+                            <p class="text-gray-600">نؤمن بقوة العمل الجماعي وتبادل الخبرات</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 rounded-full bg-genz-green/10 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lightbulb text-3xl text-genz-green"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">الابتكار</h4>
+                            <p class="text-gray-600">نسعى دائمًا لتطوير حلول إبداعية للتحديات</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 rounded-full bg-genz-purple/10 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-3xl text-genz-purple"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">التأثير</h4>
+                            <p class="text-gray-600">نعمل لتحقيق تأثير إيجابي ملموس في المجتمع</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals Page -->
+        <section id="goalsPage" class="page-content min-h-screen hidden">
+            <div class="container mx-auto px-4 py-20">
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">أهداف <span class="text-genz-blue">جيل زد</span></h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        نسعى لتحقيق رؤيتنا من خلال مجموعة من الأهداف الاستراتيجية المحددة
+                    </p>
+                </div>
+
+                <!-- Main Goals -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-start mb-6">
+                            <div class="w-12 h-12 rounded-full bg-genz-blue/10 flex items-center justify-center mr-4">
+                                <span class="text-genz-blue font-bold text-xl">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">التطوير الشخصي والمهني</h3>
+                                <p class="text-gray-600">
+                                    تمكين الشباب بالمهارات اللازمة للنجاح في سوق العمل الحديث من خلال برامج تدريبية متخصصة
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">التقدم الحالي</span>
+                                <span class="text-genz-blue font-bold">10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-start mb-6">
+                            <div class="w-12 h-12 rounded-full bg-genz-green/10 flex items-center justify-center mr-4">
+                                <span class="text-genz-green font-bold text-xl">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">التمكين المجتمعي</h3>
+                                <p class="text-gray-600">
+                                    بناء مجتمعات قوية من خلال مشاريع تنموية تهدف إلى حل التحديات المحلية
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">التقدم الحالي</span>
+                                <span class="text-genz-green font-bold">12%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 12%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-start mb-6">
+                            <div class="w-12 h-12 rounded-full bg-genz-purple/10 flex items-center justify-center mr-4">
+                                <span class="text-genz-purple font-bold text-xl">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">الريادة والابتكار</h3>
+                                <p class="text-gray-600">
+                                    إقامة المشاريع الريادية الناشئة وتبني الأفكار المبتكرة لخلق فرص جديدة
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">التقدم الحالي</span>
+                                <span class="text-genz-purple font-bold">1%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 1%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-start mb-6">
+                            <div class="w-12 h-12 rounded-full bg-genz-orange/10 flex items-center justify-center mr-4">
+                                <span class="text-genz-orange font-bold text-xl">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">التواصل العالمي</h3>
+                                <p class="text-gray-600">
+                                    بناء جسور التواصل مع الشباب حول العالم وتبادل الخبرات والمعرفة
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">التقدم الحالي</span>
+                                <span class="text-genz-orange font-bold">1%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 1%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Objectives -->
+                <div class="mb-20">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">الأهداف الاستراتيجية</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-genz-blue/5 to-white rounded-xl p-6 border border-genz-blue/10">
+                            <div class="w-12 h-12 rounded-lg bg-genz-blue/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-user-graduate text-xl text-genz-blue"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">التدريب والتأهيل</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    تدريب 10,000 شاب بحلول 2025
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    تطوير 50 برنامجًا تدريبيًا
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    شهادات معتمدة دوليًا
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-genz-green/5 to-white rounded-xl p-6 border border-genz-green/10">
+                            <div class="w-12 h-12 rounded-lg bg-genz-green/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-hands-helping text-xl text-genz-green"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">المشاريع المجتمعية</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    تنفيذ 100 مشروع مجتمعي
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    الوصول إلى 20 مدينة
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    تأثير مباشر على 50,000 شخص
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-genz-purple/5 to-white rounded-xl p-6 border border-genz-purple/10">
+                            <div class="w-12 h-12 rounded-lg bg-genz-purple/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-rocket text-xl text-genz-purple"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">الريادة والابتكار</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    دعم 200 مشروع ريادي
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    تمويل 50 فكرة مبتكرة
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-genz-green ml-2"></i>
+                                    خلق 1000 فرصة عمل
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Metrics -->
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">مؤشرات التأثير</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center p-6">
+                            <div class="text-4xl font-bold text-genz-blue mb-2">85%</div>
+                            <p class="text-gray-600">نسبة التوظيف بعد التدريب</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="text-4xl font-bold text-genz-green mb-2">92%</div>
+                            <p class="text-gray-600">رضا المشاركين</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="text-4xl font-bold text-genz-purple mb-2">40%</div>
+                            <p class="text-gray-600">نمو المشاريع المدعومة</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="text-4xl font-bold text-genz-orange mb-2">15x</div>
+                            <p class="text-gray-600">العائد الاجتماعي على الاستثمار</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Page -->
+        <section id="workPage" class="page-content min-h-screen hidden">
+            <div class="container mx-auto px-4 py-20">
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">أعمال <span class="text-genz-blue">جيل زد</span></h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        مشاريع ومبادرات نعمل عليها لتحقيق رؤيتنا وتمكين جيل زد
+                    </p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/400/250?random=9" alt="GEN TALKS" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="px-3 py-1 bg-genz-blue/10 text-genz-blue rounded-full text-sm font-medium">الالهام / لتدريب </span>
+                                <span class="text-gray-400 text-sm mr-3">قيد التطوير </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">GEN TALKS</h3>
+                            <p class="text-gray-600 mb-4">
+                                برنامج GEN هو المنصة التي تطلق افكار الجيل الجديد على المستوى المحلي و العالمي , وتصنع قادة مؤثرين , وتحول الالهام الى فعل.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-genz-blue font-medium">قريبًا</span>
+                                <button class="text-genz-blue hover:text-genz-purple">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/400/250?random=10" alt="مبادرة المجتمع الجديد " class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="px-3 py-1 bg-genz-green/10 text-genz-green rounded-full text-sm font-medium">مجتمعي</span>
+                                <span class="text-gray-400 text-sm mr-3">مستمر</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">مبادرة المجتمع الجديد</h3>
+                            <p class="text-gray-600 mb-4">
+                                مبادرة مجتمعية لتسهيل عملية اصدار البطائق الوطنية لطلاب المدارس و الثانويات و الجامعات.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-genz-green font-medium">مستمر</span>
+                                <button class="text-genz-green hover:text-genz-blue">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/400/250?random=11" alt=" هاكثون تقني" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="px-3 py-1 bg-genz-purple/10 text-genz-purple rounded-full text-sm font-medium">تقني / تطوير</span>
+                                <span class="text-gray-400 text-sm mr-3">قيد التطوير</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">هاكثون تقني</h3>
+                            <p class="text-gray-600 mb-4">
+                                هاكثون لتقني للتنافس بين افضل المبرمجين الشباب للخروج بأنظمة و تطبيقات تنفع المجتمع و الدولة.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-genz-purple font-medium">قريباً</span>
+                                <button class="text-genz-purple hover:text-genz-blue">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/400/250?random=12" alt="منصة التعليم الإلكتروني" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="px-3 py-1 bg-genz-orange/10 text-genz-orange rounded-full text-sm font-medium">تقنية</span>
+                                <span class="text-gray-400 text-sm mr-3">قيد التطوير</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">منصة التعليم الإلكتروني</h3>
+                            <p class="text-gray-600 mb-4">
+                                منصة رقمية تقدم محتوى تعليمي عالي الجودة في مجالات متعددة، متاحة للشباب في جميع أنحاء الوطن العربي.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-genz-orange font-medium">قريبًا</span>
+                                <button class="text-genz-orange hover:text-genz-blue">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/400/250?random=13" alt="برنامج القيادة الشبابية" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="px-3 py-1 bg-genz-pink/10 text-genz-pink rounded-full text-sm font-medium">تطوير</span>
+                                <span class="text-gray-400 text-sm mr-3">مستمر</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">برنامج القيادة الشبابية</h3>
+                            <p class="text-gray-600 mb-4">
+                                برنامج مكثف لتطوير مهارات القيادة لدى الشباب وإعدادهم لقيادة التغيير في مجتمعاتهم.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-genz-pink font-medium">قريباً</span>
+                                <button class="text-genz-pink hover:text-genz-blue">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/400/250?random=14" alt="مهرجان الابتكار الشبابي" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="px-3 py-1 bg-genz-blue/10 text-genz-blue rounded-full text-sm font-medium">فعاليات</span>
+                                <span class="text-gray-400 text-sm mr-3">سنوي</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">مهرجان الابتكار الشبابي</h3>
+                            <p class="text-gray-600 mb-4">
+                                فعالية سنوية تجمع المبتكرين الشباب لعرض مشاريعهم وتبادل الخبرات مع الخبراء والمستثمرين.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-genz-blue font-medium">قيد التطوير/span>
+                                <button class="text-genz-blue hover:text-genz-purple">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <!-- Call to Action -->
+                <div class="bg-gradient-to-r from-genz-blue to-genz-purple rounded-2xl p-8 text-center text-white">
+                    <h3 class="text-3xl font-bold mb-4">هل لديك فكرة لمشروع؟</h3>
+                    <p class="text-xl mb-8 opacity-90">نحن هنا لدعمك وتحويل أفكارك إلى واقع ملموس</p>
+                   <a href="#contact" class="text-gray-400 hover:text-white transition-colors" data-page="contact"> <button class="px-8 py-3 bg-white text-genz-blue rounded-full hover:bg-gray-100 font-bold text-lg transition-all duration-300">
+                        قدم مشروعك الآن
+                    </button></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contactPage" class="page-content min-h-screen hidden">
+            <div class="container mx-auto px-4 py-20">
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">اتصل <span class="text-genz-blue">بنا</span></h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        نحن هنا للإجابة على استفساراتك والاستماع لأفكارك ومقترحاتك
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">أرسل رسالتك</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2">الاسم الكامل</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-genz-blue transition-all" placeholder="أدخل اسمك">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+                                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-genz-blue transition-all" placeholder="example@email.com">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 mb-2">الموضوع</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-genz-blue transition-all">
+                                    <option value="">اختر الموضوع</option>
+                                    <option value="inquiry">استفسار عام</option>
+                                    <option value="partnership">شراكة</option>
+                                    <option value="volunteer">تطوع</option>
+                                    <option value="project">مشروع</option>
+                                    <option value="other">أخرى</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 mb-2">الرسالة</label>
+                                <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-genz-blue transition-all h-40" placeholder="اكتب رسالتك هنا..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 bg-genz-blue text-white rounded-lg hover:bg-genz-purple transition-all duration-300 font-bold text-lg">
+                                إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="bg-gray-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">معلومات التواصل</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-genz-blue/10 flex items-center justify-center ml-4">
+                                        <i class="fas fa-map-marker-alt text-genz-blue"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">العنوان</h4>
+                                        <p class="text-gray-600"> حي الثورة<br>حضرموت,اليمن </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-genz-green/10 flex items-center justify-center ml-4">
+                                        <i class="fas fa-phone text-genz-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">الهاتف</h4>
+                                        <p class="text-gray-600">+967  775 705 991</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-genz-purple/10 flex items-center justify-center ml-4">
+                                        <i class="fas fa-envelope text-genz-purple"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">البريد الإلكتروني</h4>
+                                        <p class="text-gray-600">genezration@gmail.org</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-genz-orange/10 flex items-center justify-center ml-4">
+                                        <i class="fas fa-clock text-genz-orange"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">ساعات العمل</h4>
+                                        <p class="text-gray-600">الأحد - الخميس: 8 صباحًا - 4 مساءً</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">تابعنا على</h3>
+                            
+                            <div class="flex space-x-4 space-x-reverse">
+                                <a href="#" class="w-12 h-12 rounded-full bg-genz-blue/10 flex items-center justify-center text-genz-blue hover:bg-genz-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-genz-green/10 flex items-center justify-center text-genz-green hover:bg-genz-green hover:text-white transition-all duration-300">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-genz-purple/10 flex items-center justify-center text-genz-purple hover:bg-genz-purple hover:text-white transition-all duration-300">
+                                    <i class="fab fa-facebook text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-genz-orange/10 flex items-center justify-center text-genz-orange hover:bg-genz-orange hover:text-white transition-all duration-300">
+                                    <i class="fab fa-youtube text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="mt-12 bg-gray-100 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">موقعنا على الخريطة</h3>
+                    <div class="h-64 bg-gradient-to-r from-genz-blue/20 to-genz-purple/20 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-4xl text-genz-blue mb-4"></i>
+                            <p class="text-gray-700">خريطة تفاعلية ستظهر هنا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 space-x-reverse mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="text-white font-bold">Z</span>
+                        </div>
+                        <h3 class="text-xl font-bold">جيل زد</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        منتدى شبابي تنموي يهدف إلى تمكين جيل زد وبناء مستقبل أفضل من خلال التطوير الشخصي والمهني.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors" data-page="home">الرئيسية</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors" data-page="about">عنّا</a></li>
+                        <li><a href="#goals" class="text-gray-400 hover:text-white transition-colors" data-page="goals">الأهداف</a></li>
+                        <li><a href="#work" class="text-gray-400 hover:text-white transition-colors" data-page="work">أعمالنا</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors" data-page="contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">خدماتنا</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">التدريب والتطوير</li>
+                        <li class="text-gray-400">التمكين المجتمعي</li>
+                        <li class="text-gray-400">الريادة والابتكار</li>
+                        <li class="text-gray-400">الاستشارات المهنية</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">النشرة البريدية</h4>
+                    <p class="text-gray-400 mb-4">اشترك لتصلك آخر أخبارنا وفعالياتنا</p>
+                    <div class="flex">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-4 py-2 rounded-r-lg text-dark">
+                        <button class="px-4 py-2 bg-genz-blue rounded-l-lg hover:bg-genz-purple transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2026 جيل زد - منتدى شبابي . جميع الحقوق محفوظة.
+                </p>
+                <p class="text-gray-500 text-sm mt-2">
+                     لتمكين جيل زد
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Define application data
+        const appData = {
+            currentPage: "home",
+            pages: {
+                "home": {
+                    id: "homePage",
+                    title: "جيل زد - منتدى شبابي تنموي",
+                    description: "منصة شبابية تنموية تهدف إلى تمكين جيل زد وبناء مستقبل أفضل"
+                },
+                "about": {
+                    id: "aboutPage",
+                    title: "عن جيل زد - منتدى شبابي تنموي",
+                    description: "تعرف على رؤيتنا، رسالتنا، وقصة تأسيس منتدى جيل زد"
+                },
+                "goals": {
+                    id: "goalsPage",
+                    title: "أهداف جيل زد - منتدى شبابي تنموي",
+                    description: "الأهداف الاستراتيجية ومؤشرات التأثير لمنتدى جيل زد"
+                },
+                "work": {
+                    id: "workPage",
+                    title: "أعمال جيل زد - منتدى شبابي تنموي",
+                    description: "مشاريع ومبادرات منتدى جيل زد لتمكين الشباب"
+                },
+                "contact": {
+                    id: "contactPage",
+                    title: "اتصل بجيل زد - منتدى شبابي تنموي",
+                    description: "تواصل مع منتدى جيل زد للاستفسارات والشراكات"
+                }
+            },
+            statistics: {
+                members: 5000,
+                workshops: 120,
+                projects: 50,
+                cities: 15
+            }
+        };
+
+        // Initialize application
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize page navigation
+            initializeNavigation();
+            
+            // Initialize mobile menu
+            initializeMobileMenu();
+            
+            // Initialize statistics animation
+            initializeStatistics();
+            
+            // Initialize progress bars
+            initializeProgressBars();
+            
+            // Initialize form submissions
+            initializeForms();
+            
+            // Initialize smooth scrolling
+            initializeSmoothScrolling();
+        });
+
+        function initializeNavigation() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll(".nav-link, [data-page]");
+            const pageContents = document.querySelectorAll(".page-content");
+            
+            // Set active page based on URL hash
+            const hash = window.location.hash.substring(1) || "home";
+            navigateToPage(hash);
+            
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute("data-page") || this.getAttribute("href").substring(1);
+                    navigateToPage(page);
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById("mobileMenu");
+                    const hamburgerBtn = document.getElementById("mobileMenuBtn");
+                    if (mobileMenu.classList.contains("open")) {
+                        mobileMenu.classList.remove("open");
+                        hamburgerBtn.classList.remove("active");
+                    }
+                });
+            });
+            
+            // Update URL hash when navigating
+            window.addEventListener("hashchange", function() {
+                const hash = window.location.hash.substring(1) || "home";
+                navigateToPage(hash);
+            });
+        }
+
+        function navigateToPage(page) {
+            // Validate page
+            if (!appData.pages[page]) {
+                page = "home";
+            }
+            
+            // Update current page
+            appData.currentPage = page;
+            
+            // Update URL hash
+            window.history.pushState(null, "", `#${page}`);
+            
+            // Update page title and description
+            document.title = appData.pages[page].title;
+            document.querySelector('meta[name="description"]').setAttribute("content", appData.pages[page].description);
+            
+            // Hide all pages
+            document.querySelectorAll(".page-content").forEach(content => {
+                content.classList.add("hidden");
+            });
+            
+            // Show current page
+            const currentPageElement = document.getElementById(appData.pages[page].id);
+            if (currentPageElement) {
+                currentPageElement.classList.remove("hidden");
+                currentPageElement.classList.add("page-transition");
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            
+            // Update active navigation links
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.classList.remove("active-nav");
+                if (link.getAttribute("data-page") === page) {
+                    link.classList.add("active-nav");
+                }
+            });
+        }
+
+        function initializeMobileMenu() {
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMobileMenu = document.getElementById("closeMobileMenu");
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener("click", function() {
+                    mobileMenu.classList.toggle("open");
+                    this.classList.toggle("active");
+                });
+                
+                if (closeMobileMenu) {
+                    closeMobileMenu.addEventListener("click", function() {
+                        mobileMenu.classList.remove("open");
+                        mobileMenuBtn.classList.remove("active");
+                    });
+                }
+                
+                // Close menu when clicking outside
+                document.addEventListener("click", function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                        mobileMenu.classList.remove("open");
+                        mobileMenuBtn.classList.remove("active");
+                    }
+                });
+            }
+        }
+
+        function initializeStatistics() {
+            // Animate statistics counters
+            const statValues = document.querySelectorAll(".stat-card .text-4xl");
+            const targetValues = [
+                appData.statistics.members,
+                appData.statistics.workshops,
+                appData.statistics.projects,
+                appData.statistics.cities
+            ];
+            
+            // Create intersection observer for statistics
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statValues.forEach((stat, index) => {
+                            animateCounter(stat, targetValues[index]);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            // Observe statistics container
+            const statsContainer = document.querySelector(".grid-cols-2.md\\:grid-cols-4");
+            if (statsContainer) {
+                observer.observe(statsContainer);
+            }
+        }
+
+        function animateCounter(element, target) {
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString() + "+";
+            }, 16);
+        }
+
+        function initializeProgressBars() {
+            // Animate progress bars when they come into view
+            const progressBars = document.querySelectorAll(".progress-bar");
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = "0%";
+                        
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 300);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            progressBars.forEach(bar => observer.observe(bar));
+        }
+
+        function initializeForms() {
+            // Contact form submission
+            const contactForm = document.querySelector("#contactPage form");
+            if (contactForm) {
+                contactForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Simulate form submission
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = "جاري الإرسال...";
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert("شكرًا لك! تم استلام رسالتك بنجاح. سنتواصل معك قريبًا.");
+                        this.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+            
+            // Newsletter subscription
+            const newsletterForm = document.querySelector("footer form");
+            if (newsletterForm) {
+                newsletterForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    
+                    if (emailInput.value) {
+                        alert("شكرًا لاشتراكك في نشرتنا البريدية!");
+                        emailInput.value = "";
+                    }
+                });
+            }
+        }
+
+        function initializeSmoothScrolling() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function(e) {
+                    const href = this.getAttribute("href");
+                    if (href === "#" || href === "#home") return;
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    }
+                });
+            });
+        }
+
+        // Add floating animation to elements
+        function addFloatingAnimation() {
+            const floatingElements = document.querySelectorAll(".floating-element");
+            floatingElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 2}s`;
+            });
+        }
+
+        // Initialize on load
+        window.addEventListener("load", function() {
+            addFloatingAnimation();
+            
+            // Add hover effects to cards
+            const cards = document.querySelectorAll(".card-hover");
+            cards.forEach(card => {
+                card.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-8px)";
+                });
+                
+                card.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                });
+            });
+            
+            // Initialize typewriter effect
+            const typewriterElement = document.querySelector(".typewriter");
+            if (typewriterElement) {
+                setTimeout(() => {
+                    typewriterElement.style.borderRight = "none";
+                }, 3500);
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", function() {
+            // Close mobile menu on desktop
+            if (window.innerWidth >= 768) {
+                const mobileMenu = document.getElementById("mobileMenu");
+                const hamburgerBtn = document.getElementById("mobileMenuBtn");
+                if (mobileMenu && hamburgerBtn) {
+                    mobileMenu.classList.remove("open");
+                    hamburgerBtn.classList.remove("active");
+                }
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener("scroll", function() {
+            const nav = document.querySelector("nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("shadow-lg");
+                nav.classList.remove("shadow-sm");
+            } else {
+                nav.classList.remove("shadow-lg");
+                nav.classList.add("shadow-sm");
+            }
+        });
+    </script>
+</body>
+</html>
